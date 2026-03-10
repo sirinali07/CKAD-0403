@@ -1,11 +1,15 @@
 ## Static Provisioning
 
 ### Task 1: Get Node Label and Create Custom Index.html on Node
+Label the node 
+```
+kubectl label node <node name> role=node
+```
 View worker nodes and their labels
 ```
 kubectl get nodes --show-labels | grep role=node
 ```
-Make a note of the kubernetes.io/hostname label of one of the nodes and ssh to one of the nodes using below command
+ssh to the labeled node using below command
 ```
 ssh -t ubuntu@<node_public_IP> 
 ```
@@ -93,7 +97,7 @@ spec:
           - mountPath: "/usr/share/nginx/html"
             name: pv-storage
   nodeSelector:
-    kubernetes.io/hostname: ip-172-20-33-138.ap-south-1.compute.internal
+    role: node
 ```
 Apply the Pod yaml created in the previous step
 ```
