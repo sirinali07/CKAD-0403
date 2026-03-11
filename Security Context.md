@@ -100,7 +100,7 @@ spec:
     runAsUser: 1000
   containers:
   - name: sec-ctx-pod2
-    image: gcr.io/google-samples/node-hello:1.0
+    image: alpine:3
     securityContext:
       runAsUser: 2000
       allowPrivilegeEscalation: false
@@ -138,7 +138,7 @@ metadata:
 spec:
   containers:
   - name: sec-ctx-3
-    image: gcr.io/google-samples/node-hello:1.0
+    image: alpine:3
 ```
 Create the Pod:
 ```
@@ -189,7 +189,7 @@ metadata:
 spec:
   containers:
   - name: sec-ctx-4
-    image: gcr.io/google-samples/node-hello:1.0
+    image: alpine:3
     securityContext:
       capabilities:
         add: ["NET_ADMIN", "SYS_TIME"]
