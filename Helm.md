@@ -1,9 +1,5 @@
-# 🪄 Helm 3 & WordPress Deployment on Kubernetes - LAB Guide
+#  Helm 3 & WordPress Deployment on Kubernetes 
 
-> 💡 **Objective:**  
-> In this lab, you will learn how to **install Helm 3**, configure it with your Kubernetes cluster, and deploy a **WordPress application** using the **Bitnami Helm chart**.
-
----
 
 ## 📘 What is Helm?
 
@@ -18,11 +14,11 @@ It allows you to define, install, and upgrade even the most complex Kubernetes a
 | **Repository** | A collection of Helm charts (like Bitnami) |
 | **Release** | A running instance of a chart in a Kubernetes cluster |
 
-📦 **In short:** Helm = Kubernetes + Simplicity 🎯
+
 
 ---
 
-## ### 🧩 Task 1: Installing Helm 3 on Kubernetes
+### 🧩 Task 1: Installing Helm 3 on Kubernetes
 
  Update System Packages
 ```bash
