@@ -24,34 +24,34 @@ It allows you to define, install, and upgrade even the most complex Kubernetes a
 
 ## ### 🧩 Task 1: Installing Helm 3 on Kubernetes
 
-### 🔹 Step 1: Update System Packages
+ Update System Packages
 ```bash
 apt update
 ```
-🔹 Step 2: Download Helm Binary
+ Download Helm Binary
 
 Download the Helm binary for Linux 386 architecture:
 ```bash
 wget https://get.helm.sh/helm-v3.11.3-linux-386.tar.gz
 ```
-🔹 Step 3: Extract the Tarball
+Extract the Tarball
 ```bash
 tar -xvzf helm-v3.11.3-linux-386.tar.gz
 ```
-🔹 Step 4: Verify Extraction
+Verify Extraction
 
 Check the extracted files to ensure Helm binary exists:
 ```bash
 ls
 ```
-🔹 Step 5: Move Helm Binary to /bin
+Move Helm Binary to /bin
 
 Make Helm accessible system-wide:
 ```bash
 mv linux-386/helm /bin/
 ```
 
-🔹 Step 6: Verify Installation
+Verify Installation
 
 Confirm Helm is installed correctly:
 ```bash
@@ -63,39 +63,40 @@ helm version
 version.BuildInfo{Version:"v3.11.3", GitCommit:"...", GoVersion:"go1.20"}
 
 ### 🌐 Task 2: Install WordPress using Helm
-🔹 Step 1: Verify Helm Installation
+ Verify Helm Installation
 ```bash
 helm version
 ```
 
-🔹 Step 2: Add Bitnami Helm Repository
+Add Bitnami Helm Repository
 
 Add the official Bitnami charts repository:
 ```bash
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ```
-🔹 Step 3: Verify Repositories
+Verify Repositories
 ```bash
 helm repo list
 ```
 
-🔹 Step 4: Install WordPress Chart
+Install WordPress Chart
 
 Install the WordPress application with the release name my-wordpress:
 
 ```bash
 helm install my-wordpress bitnami/wordpress
 ```
-🔹 Step 5: List Helm Releases
+List Helm Releases
 ```bash
 helm list
 ```
 🧾 Verification Steps
-🔹 Step 1: Check Kubernetes Resources
+
+ Check Kubernetes Resources
 ```bash
 kubectl get all
 ```
-🔹 Step 2: Verify Pods
+Verify Pods
 
 Ensure all pods are running:
 
@@ -103,14 +104,14 @@ Ensure all pods are running:
 kubectl get pods
 ```
 
-🔹 Step 3: Verify Deployment
+Verify Deployment
 
 Check if the frontend WordPress pods are part of a deployment:
 ```bash
 kubectl get deploy
 ```
 
-🔹 Step 4: Verify Services
+Verify Services
 ```bash
 kubectl get svc
 ```
@@ -138,22 +139,21 @@ http://<Public-IP-of-Node>:<NodePort>
 
 ### 🧹 Cleanup
 
-🔹 Step 1: List Installed Helm Releases
+List Installed Helm Releases
 ```bash
 helm ls
 ```
-🔹 Step 2: Uninstall WordPress
+Uninstall WordPress
 
 Remove the release:
 ```bash
 helm uninstall my-wordpress
 ```
-
-🔹 Step 3: Confirm Deletion
+Confirm Deletion
 ```bash
 helm ls
 ```
-🔹 Step 4: Remove Repository
+Remove Repository
 ```bash
 helm repo remove bitnami
 ```
